@@ -1,0 +1,6 @@
+FROM python:3
+COPY opendocker.py /
+COPY Docker.docx /
+RUN pip instal flask 
+RUN pip instal python-docx
+CMD ["python", "opendocker.py"]
