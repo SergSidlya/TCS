@@ -1,0 +1,112 @@
+C:\Users\Serg>docker pull hello-world
+Using default tag: latest
+latest: Pulling from library/hello-world
+Digest: sha256:ffb13da98453e0f04d33a6eee5bb8e46ee50d08ebe17735fc0779d0349e889e9
+Status: Image is up to date for hello-world:latest
+docker.io/library/hello-world:latest
+
+C:\Users\Serg>docker run hello-world
+
+Hello from Docker!
+This message shows that your installation appears to be working correctly.
+
+To generate this message, Docker took the following steps:
+ 1. The Docker client contacted the Docker daemon.
+ 2. The Docker daemon pulled the "hello-world" image from the Docker Hub.
+    (amd64)
+ 3. The Docker daemon created a new container from that image which runs the
+    executable that produces the output you are currently reading.
+ 4. The Docker daemon streamed that output to the Docker client, which sent it
+    to your terminal.
+
+To try something more ambitious, you can run an Ubuntu container with:
+ $ docker run -it ubuntu bash
+
+Share images, automate workflows, and more with a free Docker ID:
+ https://hub.docker.com/
+
+For more examples and ideas, visit:
+ https://docs.docker.com/get-started/
+
+
+C:\Users\Serg>docker run -it ubuntu bash
+root@272e9896fe0c:/# docker image
+bash: docker: command not found
+root@272e9896fe0c:/# exit
+exit
+
+C:\Users\Serg>pull ellerbrock/alpine-bash-git
+'pull' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\Users\Serg>docker pull ellerbrock/alpine-bash-git
+Using default tag: latest
+latest: Pulling from ellerbrock/alpine-bash-git
+Digest: sha256:46262050f227c4515a501607873d760961ee32d92fa5b8cf9c89aca3c564d008
+Status: Image is up to date for ellerbrock/alpine-bash-git:latest
+docker.io/ellerbrock/alpine-bash-git:latest
+
+C:\Users\Serg>docker run -it ellerbrock/alpine-bash-git
+usage: git [--version] [--help] [-C <path>] [-c <name>=<value>]
+           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]
+           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]
+           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]
+           <command> [<args>]
+
+These are common Git commands used in various situations:
+
+start a working area (see also: git help tutorial)
+   clone      Clone a repository into a new directory
+   init       Create an empty Git repository or reinitialize an existing one
+
+work on the current change (see also: git help everyday)
+   add        Add file contents to the index
+   mv         Move or rename a file, a directory, or a symlink
+   reset      Reset current HEAD to the specified state
+   rm         Remove files from the working tree and from the index
+
+examine the history and state (see also: git help revisions)
+   bisect     Use binary search to find the commit that introduced a bug
+   grep       Print lines matching a pattern
+   log        Show commit logs
+   show       Show various types of objects
+   status     Show the working tree status
+
+grow, mark and tweak your common history
+   branch     List, create, or delete branches
+   checkout   Switch branches or restore working tree files
+   commit     Record changes to the repository
+   diff       Show changes between commits, commit and working tree, etc
+   merge      Join two or more development histories together
+   rebase     Reapply commits on top of another base tip
+   tag        Create, list, delete or verify a tag object signed with GPG
+
+collaborate (see also: git help workflows)
+   fetch      Download objects and refs from another repository
+   pull       Fetch from and integrate with another repository or a local branch
+   push       Update remote refs along with associated objects
+
+'git help -a' and 'git help -g' list available subcommands and some
+concept guides. See 'git help <command>' or 'git help <concept>'
+to read about a specific subcommand or concept.
+
+C:\Users\Serg>git clone https://github.com/SergSidlya/TCS.git
+Cloning into 'TCS'...
+remote: Enumerating objects: 15, done.
+remote: Counting objects: 100% (15/15), done.
+remote: Compressing objects: 100% (10/10), done.
+remote: Total 15 (delta 0), reused 3 (delta 0), pack-reused 0
+Receiving objects: 100% (15/15), 24.64 KiB | 6.16 MiB/s, done.
+
+C:\Users\Serg>git version
+git version 2.40.0.windows.1
+
+C:\Users\Serg>docker restart lab_01
+lab_01
+
+C:\Users\Serg>docker exec -it lab_01 /bin/bash
+bash-4.4$ ls
+Serg
+exit
+
+C:\Users\Serg>
