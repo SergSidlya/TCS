@@ -1,0 +1,44 @@
+C:\Lab\Lab_2\Lab_2_1>docker build -t myimage .
+[+] Building 102.4s (9/9) FINISHED
+ => [internal] load build definition from Dockerfile                                                               0.3s
+ => => transferring dockerfile: 113B                                                                               0.1s
+ => [internal] load .dockerignore                                                                                  0.4s
+ => => transferring context: 2B                                                                                    0.0s
+ => [internal] load metadata for docker.io/library/python:3                                                        3.4s
+ => [auth] library/python:pull token for registry-1.docker.io                                                      0.0s
+ => [internal] load build context                                                                                  0.3s
+ => => transferring context: 56B                                                                                   0.0s
+ => [1/3] FROM docker.io/library/python:3@sha256:08e538ee415a46998b19a6451da95d831f9e7e81be506925df51467b94e9cd4  82.9s
+ => => resolve docker.io/library/python:3@sha256:08e538ee415a46998b19a6451da95d831f9e7e81be506925df51467b94e9cd43  0.1s
+ => => sha256:08e538ee415a46998b19a6451da95d831f9e7e81be506925df51467b94e9cd43 2.14kB / 2.14kB                     0.0s
+ => => sha256:aa25de88a84b4c966ce581bda763553da7a093a06315adec8830c3d39b832196 2.22kB / 2.22kB                     0.0s
+ => => sha256:df3e9d105d6c5f8aa4410ba84b570db5f9fefbf14020b70fb63c8e7c32e51fb0 7.90kB / 7.90kB                     0.0s
+ => => sha256:670730c27c2eacf07897a6e94fe55423ea50b884d9c28161a283bbbf064d1124 10.88MB / 10.88MB                   4.1s
+ => => sha256:3e440a7045683e27f8e2fa04000e0e078d8dfac0c971358ae0f8c65c13321c8e 55.05MB / 55.05MB                  16.3s
+ => => sha256:68a71c865a2c34678c6dea55e4b0928f751ee3c0ca91cace6e4e0578c534d6cf 5.17MB / 5.17MB                     4.4s
+ => => sha256:5a7a2c95f0f8b221d776ccf35911b68eec2cf9414a44d216205a6f03e381d3d7 54.58MB / 54.58MB                  21.4s
+ => => sha256:6d627e120214bb28a729d4b54a0ecba4c4aeaf0295ca2d1f129480145fad2af6 196.81MB / 196.81MB                34.6s
+ => => sha256:f8c6dc6780819f5eb5a6ee84ce72dd613d5e6c406585211a064b6ef641c8a09a 6.29MB / 6.29MB                    19.7s
+ => => extracting sha256:3e440a7045683e27f8e2fa04000e0e078d8dfac0c971358ae0f8c65c13321c8e                         12.5s
+ => => sha256:48bd2de548fc487bbcf51e8ae99969d4ac77e412c4fcec68bc529bca2ad304b3 20.05MB / 20.05MB                  25.0s
+ => => sha256:e69bcee2d3143195eac279932a0692697b7e3905bed8c737f1cc7f237899ea05 244B / 244B                        22.2s
+ => => sha256:284a2f2376093ba00b09f539e56047dc168703a78095640a178b8e0c5450f460 3.08MB / 3.08MB                    24.4s
+ => => extracting sha256:68a71c865a2c34678c6dea55e4b0928f751ee3c0ca91cace6e4e0578c534d6cf                          0.8s
+ => => extracting sha256:670730c27c2eacf07897a6e94fe55423ea50b884d9c28161a283bbbf064d1124                          0.5s
+ => => extracting sha256:5a7a2c95f0f8b221d776ccf35911b68eec2cf9414a44d216205a6f03e381d3d7                          7.8s
+ => => extracting sha256:6d627e120214bb28a729d4b54a0ecba4c4aeaf0295ca2d1f129480145fad2af6                         18.0s
+ => => extracting sha256:f8c6dc6780819f5eb5a6ee84ce72dd613d5e6c406585211a064b6ef641c8a09a                          1.3s
+ => => extracting sha256:48bd2de548fc487bbcf51e8ae99969d4ac77e412c4fcec68bc529bca2ad304b3                          0.8s
+ => => extracting sha256:e69bcee2d3143195eac279932a0692697b7e3905bed8c737f1cc7f237899ea05                          0.0s
+ => => extracting sha256:284a2f2376093ba00b09f539e56047dc168703a78095640a178b8e0c5450f460                          1.1s
+ => [2/3] COPY app.py /                                                                                            2.0s
+ => [3/3] RUN pip install flask                                                                                   11.8s
+ => exporting to image                                                                                             1.0s
+ => => exporting layers                                                                                            0.7s
+ => => writing image sha256:c0df7c6df6341ff9d5091d712a77191ebfc7197a4e5a5d7d3ecf564c63f43165                       0.0s
+ => => naming to docker.io/library/myimage                                                                         0.0s
+
+C:\Lab\Lab_2\Lab_2_1>docker run myimage
+Hello, world!
+
+C:\Lab\Lab_2\Lab_2_1>
