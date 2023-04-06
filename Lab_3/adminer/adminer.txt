@@ -1,0 +1,81 @@
+Microsoft Windows [Version 10.0.19044.2728]
+(c) Корпорація Майкрософт. Усі права захищені.
+
+C:\web server\adminer>docker build -t amdminer .
+[+] Building 75.2s (6/6) FINISHED
+ => [internal] load build definition from Dockerfile                                                               0.1s
+ => => transferring dockerfile: 282B                                                                               0.0s
+ => [internal] load .dockerignore                                                                                  0.0s
+ => => transferring context: 2B                                                                                    0.0s
+ => [internal] load metadata for docker.io/library/php:7.4-apache                                                  3.1s
+ => [1/3] FROM docker.io/library/php:7.4-apache@sha256:c9d7e608f73832673479770d66aacc8100011ec751d1905ff63fae3fe  58.2s
+ => => resolve docker.io/library/php:7.4-apache@sha256:c9d7e608f73832673479770d66aacc8100011ec751d1905ff63fae3fe2  0.0s
+ => => sha256:18b3497ee7f2099a90b66c23a0bc3d5261b12bab367263e1b40e9b004c39e882 3.04kB / 3.04kB                     0.0s
+ => => sha256:c9d7e608f73832673479770d66aacc8100011ec751d1905ff63fae3fe2e0ca6d 1.86kB / 1.86kB                     0.0s
+ => => sha256:20a3732f422b7b28dcf99e8597f093a8c135efca62ff0dc02a2d92d916369413 12.51kB / 12.51kB                   0.0s
+ => => sha256:a603fa5e3b4127f210503aaa6189abf6286ee5a73deeaab460f8f33ebc6b64e2 31.41MB / 31.41MB                   8.4s
+ => => sha256:c428f1a494230852524a2a5957cc5199c36c8b403305e0e877d580bd0ec9e763 226B / 226B                         0.7s
+ => => sha256:156740b07ef8a632f9f7bea4e57e4ee5541ade376adf9169351a1265382e39de 91.63MB / 91.63MB                  19.2s
+ => => sha256:fb5a4c8af82f00730b7427e47bda7f76cea2e2b9aea421750bc9025aface98d8 270B / 270B                         0.9s
+ => => sha256:25f85b498fd5bfc6cce951513219fe480850daba71e6e997741e984d18483971 19.25MB / 19.25MB                   5.8s
+ => => sha256:9b233e420ac7bbca645bb82c213029762acf1742400c076360dc303213c309d5 475B / 475B                         6.0s
+ => => sha256:fe42347c4ecfc90333acd9cad13912387eea39d13827a25cfa78727fa5d200e9 514B / 514B                         6.3s
+ => => sha256:d14eb2ed1e17ae00f5fcb44b0d562e2867c401c20372829e2cf443fc409342fa 10.76MB / 10.76MB                   9.8s
+ => => sha256:66d98f73acb62e86c0c226f9eedcbc7eda305df0c1e171ca5caf81cb8b1c40cb 491B / 491B                         8.9s
+ => => sha256:d2c43c5efbc861f83ee6565c7102ca660d6f35e158324fbb042de5017e43afe8 10.20MB / 10.20MB                  12.4s
+ => => sha256:ab590b48ea476386dd7b07c34de9eff7cf2103c4668ade985fe31e59f15deee8 2.46kB / 2.46kB                    10.3s
+ => => sha256:80692ae2d067c8358112c56490a2a97f69ef395fd8f7662a31498644c9a813ef 246B / 246B                        10.8s
+ => => extracting sha256:a603fa5e3b4127f210503aaa6189abf6286ee5a73deeaab460f8f33ebc6b64e2                          4.5s
+ => => sha256:05e465aaa99a358add4acecdade8f39843089069f31fea0201533d3a09a98c9a 892B / 892B                        11.2s
+ => => extracting sha256:c428f1a494230852524a2a5957cc5199c36c8b403305e0e877d580bd0ec9e763                          0.0s
+ => => extracting sha256:156740b07ef8a632f9f7bea4e57e4ee5541ade376adf9169351a1265382e39de                         14.2s
+ => => extracting sha256:fb5a4c8af82f00730b7427e47bda7f76cea2e2b9aea421750bc9025aface98d8                          0.0s
+ => => extracting sha256:25f85b498fd5bfc6cce951513219fe480850daba71e6e997741e984d18483971                          2.5s
+ => => extracting sha256:9b233e420ac7bbca645bb82c213029762acf1742400c076360dc303213c309d5                          0.0s
+ => => extracting sha256:fe42347c4ecfc90333acd9cad13912387eea39d13827a25cfa78727fa5d200e9                          0.0s
+ => => extracting sha256:d14eb2ed1e17ae00f5fcb44b0d562e2867c401c20372829e2cf443fc409342fa                          0.3s
+ => => extracting sha256:66d98f73acb62e86c0c226f9eedcbc7eda305df0c1e171ca5caf81cb8b1c40cb                          0.0s
+ => => extracting sha256:d2c43c5efbc861f83ee6565c7102ca660d6f35e158324fbb042de5017e43afe8                          7.9s
+ => => extracting sha256:ab590b48ea476386dd7b07c34de9eff7cf2103c4668ade985fe31e59f15deee8                          0.0s
+ => => extracting sha256:80692ae2d067c8358112c56490a2a97f69ef395fd8f7662a31498644c9a813ef                          0.0s
+ => => extracting sha256:05e465aaa99a358add4acecdade8f39843089069f31fea0201533d3a09a98c9a                          0.0s
+ => [2/3] RUN apt-get update &&     apt-get install -y wget &&     rm -rf /var/lib/apt/lists/*                    10.7s
+ => ERROR [3/3] RUN wget https://github.com/vrana/adminer/releases/download/v4.8.1/adminer-4.8.1.php -O /var/www/  3.0s
+------
+ > [3/3] RUN wget https://github.com/vrana/adminer/releases/download/v4.8.1/adminer-4.8.1.php -O /var/www/html/index.php:
+#5 0.600 --2023-04-06 12:58:14--  https://github.com/vrana/adminer/releases/download/v4.8.1/adminer-4.8.1.php
+#5 0.618 Resolving github.com (github.com)... ::ffff:140.82.121.4, 140.82.121.4
+#5 0.733 Connecting to github.com (github.com)|::ffff:140.82.121.4|:443... connected.
+#5 2.965 GnuTLS: The TLS connection was non-properly terminated.
+#5 2.965 Unable to establish SSL connection.
+------
+executor failed running [/bin/sh -c wget https://github.com/vrana/adminer/releases/download/v4.8.1/adminer-4.8.1.php -O /var/www/html/index.php]: exit code: 4
+
+C:\web server\adminer>docker build -t amdminer .
+[+] Building 2.5s (7/7) FINISHED
+ => [internal] load build definition from Dockerfile                                                               0.0s
+ => => transferring dockerfile: 32B                                                                                0.0s
+ => [internal] load .dockerignore                                                                                  0.0s
+ => => transferring context: 2B                                                                                    0.0s
+ => [internal] load metadata for docker.io/library/php:7.4-apache                                                  0.7s
+ => [1/3] FROM docker.io/library/php:7.4-apache@sha256:c9d7e608f73832673479770d66aacc8100011ec751d1905ff63fae3fe2  0.0s
+ => CACHED [2/3] RUN apt-get update &&     apt-get install -y wget &&     rm -rf /var/lib/apt/lists/*              0.0s
+ => [3/3] RUN wget https://github.com/vrana/adminer/releases/download/v4.8.1/adminer-4.8.1.php -O /var/www/html/i  1.6s
+ => exporting to image                                                                                             0.1s
+ => => exporting layers                                                                                            0.1s
+ => => writing image sha256:5848bac564f44a148b91bc0841b1f8f32d6bc98794e4f06fa3337273b471900f                       0.0s
+ => => naming to docker.io/library/amdminer                                                                        0.0s
+
+C:\web server\adminer>docker run -p 8080:80 adminer
+Unable to find image 'adminer:latest' locally
+latest: Pulling from library/adminer
+3e440a704568: Already exists
+8d6386bc062c: Pull complete
+5dbc633dab93: Pull complete
+39317196bba2: Pull complete
+31ea8e1da1f9: Pull complete
+d3ce0ac05636: Pull complete
+ac3ee3b23021: Pull complete
+Digest: sha256:4203fd6bcd82fe25dceaf8acb4826129cf7a6e93b22a5ab2fc0ec5a7cdaca3f4
+Status: Downloaded newer image for adminer:latest
+[Thu Apr  6 13:00:19 2023] PHP 7.4.33 Development Server (http://[::]:8080) started

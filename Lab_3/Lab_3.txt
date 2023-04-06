@@ -1,0 +1,74 @@
+Microsoft Windows [Version 10.0.19044.2728]
+(c) Корпорація Майкрософт. Усі права захищені.
+
+C:\web server>docker build -t mywebserver .
+[+] Building 0.4s (8/8) FINISHED
+ => [internal] load build definition from Dockerfile                                                               0.0s
+ => => transferring dockerfile: 32B                                                                                0.0s
+ => [internal] load .dockerignore                                                                                  0.0s
+ => => transferring context: 2B                                                                                    0.0s
+ => [internal] load metadata for docker.io/library/nginx:latest                                                    0.0s
+ => [1/3] FROM docker.io/library/nginx:latest                                                                      0.0s
+ => [internal] load build context                                                                                  0.0s
+ => => transferring context: 2.05kB                                                                                0.0s
+ => CACHED [2/3] RUN apt-get update && apt-get install -y curl                                                     0.0s
+ => [3/3] COPY . /usr/share/nginx/html                                                                             0.0s
+ => exporting to image                                                                                             0.1s
+ => => exporting layers                                                                                            0.0s
+ => => writing image sha256:4113d0b6c66a48023bc2cfbc71e5710d03d561b66c262d9d0e8e59fc01d4da74                       0.0s
+ => => naming to docker.io/library/mywebserver                                                                     0.0s
+
+C:\web server>docker run -d -p 80:80 mywebserver
+5b142624ab3298cfe2b52e0ab8e77bee81338f5d7d352d09150694ff7c2f733f
+
+C:\web server>docker pull mysql
+Using default tag: latest
+latest: Pulling from library/mysql
+9bd56b05f662: Pull complete
+78e32a9ae10c: Pull complete
+a1e5e8b7ab26: Pull complete
+787571554435: Pull complete
+2196b088d320: Pull complete
+7110b83b5540: Pull complete
+3a87bf11fa6d: Pull complete
+63b2fc823dcf: Pull complete
+f77b236f8f2c: Pull complete
+b5b4bafd2ab7: Pull complete
+4fc4c1855df1: Pull complete
+Digest: sha256:ff3828b105886f496e47eddced1676b2abd1419a40a65ac4ab387ba1c538a09f
+Status: Downloaded newer image for mysql:latest
+docker.io/library/mysql:latest
+
+C:\web server>docker run -d -p 3306:3306 -v /my/data/directory:/var/lib/mysql --name my-mysql-container -e MYSQL_ROOT_PASSWORD=my-secret-pw mysql
+4fffd01132c61349ba33e5f8b0bfd01d518056a43ba55e0e48a74a87c07f80f9
+
+C:\web server>docker pull phpmyadmin/phpmyadmin
+Using default tag: latest
+latest: Pulling from phpmyadmin/phpmyadmin
+f1f26f570256: Already exists
+ee0a4e40ccac: Pull complete
+5ca9fb408faa: Pull complete
+5baa808a48ff: Pull complete
+6e8d74e4d8ee: Pull complete
+fac8e70fcf67: Pull complete
+b3b7906fb177: Pull complete
+cb4935bbeb83: Pull complete
+c9e00ef337e3: Pull complete
+cfe495c8d695: Pull complete
+dcc3fd107f0c: Pull complete
+fe3c587d1f07: Pull complete
+677f27d94442: Pull complete
+4d778a8cb653: Pull complete
+5f0f7b557ecd: Pull complete
+6ad259d60f7c: Pull complete
+41acd705cbc4: Pull complete
+912204d5a7e6: Pull complete
+Digest: sha256:ed87921184b59f7d8fc85c6a5f041c22758a4d4419c0ee3bac38eb7e133eaed3
+Status: Downloaded newer image for phpmyadmin/phpmyadmin:latest
+docker.io/phpmyadmin/phpmyadmin:latest
+
+C:\web server>docker run --name phpmyadmin-container -d -p 8080:80 -v /path/to/config:/etc/phpmyadmin/config.inc.php phpmyadmin/phpmyadmin
+1a9c0f97dab67ee1dd7862055689056e56057444cfa7add59a70e955af8a21ea
+docker: Error response from daemon: failed to create shim task: OCI runtime create failed: runc create failed: unable to start container process: error during container init: error mounting "/path/to/config" to rootfs at "/etc/phpmyadmin/config.inc.php": mount /path/to/config:/etc/phpmyadmin/config.inc.php (via /proc/self/fd/14), flags: 0x5000: not a directory: unknown: Are you trying to mount a directory onto a file (or vice-versa)? Check if the specified host path exists and is the expected type.
+
+C:\web server>
