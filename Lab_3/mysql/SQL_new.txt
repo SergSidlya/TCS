@@ -1,0 +1,14 @@
+greenfox@Greenfox-Lenovo-IdeaPad-Y570:~$ sudo docker ps
+[sudo] password for greenfox:
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+greenfox@Greenfox-Lenovo-IdeaPad-Y570:~$ sudo docker run -d -p 3306:3306 --name mysql-server -e MYSQL_ROOT_PASSWORD=admin -e MYSQL_USER=admin -e MYSQL_PASSWORD=admin -v /path/to/data:/var/lib/mysql mysql:latest
+554eb08905835035da549909fb2d5efb1ed3886752228054c1466c32aef0a554
+greenfox@Greenfox-Lenovo-IdeaPad-Y570:~$ sudo docker pull phpmyadmin/phpmyadmin
+Using default tag: latest
+latest: Pulling from phpmyadmin/phpmyadmin
+Digest: sha256:ed87921184b59f7d8fc85c6a5f041c22758a4d4419c0ee3bac38eb7e133eaed3
+Status: Image is up to date for phpmyadmin/phpmyadmin:latest
+docker.io/phpmyadmin/phpmyadmin:latest
+greenfox@Greenfox-Lenovo-IdeaPad-Y570:~$ sudo docker run --name phpmyadmin -d --link mysql-server:db -p 8080:80 phpmyadmin/phpmyadmin
+9b9df74a6404763457e17699188cc54a751684c5fdeea2d76772df5dd385ab4c
+greenfox@Greenfox-Lenovo-IdeaPad-Y570:~$
