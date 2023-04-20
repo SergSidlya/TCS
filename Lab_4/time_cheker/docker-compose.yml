@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+  writer:
+    build: 
+      context: .
+      dockerfile: Dockerfile.writer
+    volumes:
+      - ./data:/data
+    restart: always
+
+  reader:
+    build:
+      context: .
+      dockerfile: Dockerfile.reader
+    volumes:
+      - ./data:/data
+    restart: always
+
