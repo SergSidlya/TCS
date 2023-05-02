@@ -1,0 +1,21 @@
+Microsoft Windows [Version 10.0.22621.1555]
+(c) Корпорація Майкрософт. Усі права захищені.
+
+C:\Users\Serg\Desktop\Lab_06>docker-compose up -d
+Creating network "lab_06_default" with the default driver
+Pulling cadvisor (gcr.io/cadvisor/cadvisor:latest)...
+latest: Pulling from cadvisor/cadvisor
+188c0c94c7c5: Pull complete
+2d4828968d6c: Pull complete
+b28a9b13dc6d: Pull complete
+031224e6222c: Pull complete
+Digest: sha256:ddadf3e2fd880deb4e0f3606d34a0d9da1165e3801116075d98a1901635dc9e8
+Status: Downloaded newer image for gcr.io/cadvisor/cadvisor:latest
+Creating cadvisor ... done
+
+C:\Users\Serg\Desktop\Lab_06>docker-compose ps
+  Name                Command                  State               Ports
+---------------------------------------------------------------------------------
+cadvisor   /usr/bin/cadvisor -logtostderr   Up (healthy)   0.0.0.0:8080->8080/tcp
+
+C:\Users\Serg\Desktop\Lab_06>
